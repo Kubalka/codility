@@ -1,3 +1,4 @@
+package cz.kubalka.codility;
 
 /*
  * Maximum binary gap = how many 0 is between 
