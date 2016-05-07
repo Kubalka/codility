@@ -2,18 +2,15 @@ package codility;
 
 public class PassingCars {
 	public static int solution(int[] A) {
-		int numCars = 0;
-		int y;
-		int z = 0;
+		int numCars = 0, numZeros = 0;
+		int i;
 
-		for (y = 0; y < A.length; y++)
-			for (z = y + 1; z < A.length; z++)
-				// System.out.println(A[z]);
-				if (A[y] == 0 && A[z] == 1) {
-					numCars++;
-					//System.out.println("y: " + y + ", z: " + z);
-					//System.out.println("A[y]: " + A[y] + ", A[z]: " + A[z] + ", numCars: " + numCars);
-				}
+		for (i = 0; i < A.length; i++) {
+			if (A[i] == 0)
+				numZeros++;
+			if (A[i] == 1)
+				numCars += numZeros;
+		}
 
 		if (numCars > 1000000000)
 			return -1;
@@ -23,13 +20,13 @@ public class PassingCars {
 	}
 
 	public static void main(String[] args) {
-		 int A[] = {0,1,0,1,1};
-		// int A[] = {1,0,0,1,1};
+		// int A[] = {0,1,0,1,1};
+		// int A[] = { 1, 0, 0, 1, 1 };
 		// int A[] = {0,0,1,1,0};
 		// int A[] = {1,0,};
 		// int A[] = {0};
 		// int A[] = {1};
-		// int A[] = {};
+		 int A[] = {};
 
 		System.out.println(solution(A));
 
